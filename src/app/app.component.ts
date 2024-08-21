@@ -4,11 +4,12 @@ import { initFlowbite } from 'flowbite';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from "./pages/home/home.component";
+import { FooterComponent } from "./layout/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent],
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent, HomeComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     initFlowbite();
 
+    //*******************************************************************************
+		//CODIGO DE DARKTHEME
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -62,5 +65,6 @@ export class AppComponent implements OnInit {
         }
       }
     });
+    //*******************************************************************************
   }
 }
