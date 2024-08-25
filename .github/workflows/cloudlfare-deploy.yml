@@ -24,7 +24,7 @@ jobs:
             npm i --omit=dev
             
       - name: Instalar Angular CLI
-        run: npm install -g @angular/cli@18.2. # Instalar Angular CLI en el ambiente de workflow
+        run: npm install -g @angular/cli@18.1.4 # Instalar Angular CLI en el ambiente de workflow
 
       - name: Build Production Angular app
         run: ng build
