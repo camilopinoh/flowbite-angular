@@ -22,13 +22,13 @@ jobs:
             NODE_OPTIONS: "--max_old_space_size=6144"
         run: |
             npm set progress=false
-            npm ci --omit=dev
+            npm ci
             
       - name: Instalar Angular CLI
         run: npm install -g @angular/cli@18.1.4 # Instalar Angular CLI en el ambiente de workflow
 
       - name: Build Production Angular app
-        run: npm run build
+        run: ng build
 
       - name: Publish
         uses: cloudflare/pages-action@v1
